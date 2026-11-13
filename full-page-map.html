@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <!-- Without this line, phones lay the page out at desktop width and the map looks tiny. -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Full page map | Los Angeles Atlas</title>
-  <meta name="description" content="Explore Los Angeles Metro Rail lines and stations on an interactive map.">
+  <title>Full page map | Manhattan Atlas</title>
+  <meta name="description" content="Explore Manhattan's bike lanes and the 2018 Central Park Squirrel Census.">
 
   <!-- MapLibre's stylesheet. Keep it on the same major version (6) as the import map below. -->
   <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@6/dist/maplibre-gl.css">
@@ -22,7 +22,7 @@
   <!-- The header is copied into every page. Changing a link? Change it in all four .html files. -->
   <header class="site-header">
     <div class="container">
-      <a class="site-name" href="./">Los Angeles Atlas</a>
+      <a class="site-name" href="./">Manhattan Atlas</a>
       <nav class="site-nav">
         <a href="inline-maps.html">Inline maps</a>
         <a href="full-page-map.html" aria-current="page">Full page map</a>
@@ -36,12 +36,12 @@
       The map is maps/full-page.yaml. class="full-page-map" (css/site.css)
       makes it fill the window below the header.
     -->
-    <ml-map src="maps/full-page.yaml?v=2026-11-13" class="full-page-map">
+    <ml-map src="maps/full-page.yaml" class="full-page-map">
       <!-- A child with slot="top-left" (or top-right, bottom-left, bottom-right) sits in that corner of the map. -->
       <div slot="top-left" class="map-note">
-        <strong>Los Angeles Metro Rail</strong><br>
-        Select a station to see which lines serve it.<br>
-        <a href="https://developer.metro.net/gtfs-schedule-data/">LA Metro GTFS</a> · Nov 13, 2026
+        <strong>Central Park and Manhattan</strong><br>
+        Hover over a bike lane for its street name. Select a squirrel sighting
+        to see its census record.
       </div>
     </ml-map>
   </main>

@@ -221,7 +221,7 @@ chapters:
   - id: squirrels
     title: Squirrels in Central Park
     description: "<p>Chapter text is <strong>HTML</strong>, not Markdown.</p>"
-    image: "img/fisk02.jpg"   # optional: a file in img/
+    image: "img/central-park.jpg"   # optional: a file in img/
     center: [-73.96778, 40.78376]
     zoom: 14
     pitch: 0                  # tilt, 0–85
@@ -269,7 +269,7 @@ Pages are plain HTML. `inline-maps.html` shows each of these:
   hundred KB is plenty for the web):
 
   ```html
-  <img src="img/fisk02.jpg" width="600" alt="Describe the image">
+  <img src="img/central-park.jpg" width="700" alt="Aerial view looking south across Central Park in Manhattan">
   ```
 
 - **Embeds**: any HTML, such as an `<iframe>` with a video.

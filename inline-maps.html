@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <!-- Without this line, phones lay the page out at desktop width and the maps look tiny. -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Inline maps | Los Angeles Atlas</title>
-  <meta name="description" content="Los Angeles Atlas, an interactive mapping exercise.">
+  <title>Inline maps | Manhattan Atlas</title>
+  <meta name="description" content="Compare maps of Manhattan's bike lanes and Central Park's squirrel sightings.">
 
   <!-- MapLibre's stylesheet. Keep it on the same major version (6) as the import map below. -->
   <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@6/dist/maplibre-gl.css">
@@ -21,7 +21,7 @@
   <!-- The header is copied into every page. Changing a link? Change it in all four .html files. -->
   <header class="site-header">
     <div class="container">
-      <a class="site-name" href="./">Los Angeles Atlas</a>
+      <a class="site-name" href="./">Manhattan Atlas</a>
       <nav class="site-nav">
         <a href="inline-maps.html" aria-current="page">Inline maps</a>
         <a href="full-page-map.html">Full page map</a>
@@ -99,20 +99,19 @@
           </div>
         </div>
 
-        <h2>Images</h2>
-
-        <p>
-          To show an image, put the file in <code>img/</code> and add an
-          <code>&lt;img&gt;</code> tag. Always write an <code>alt</code> text
-          that describes the image for readers who can't see it. Keep image
-          files small (a few hundred KB): resize big scans and photos before
-          you add them, because the browser downloads the whole file.
-        </p>
-
-        <img
-          src="img/fisk02.jpg"
-          width="600"
-          alt="Harold Fisk's 1944 map of the ancient courses of the Mississippi River">
+        <h2>Central Park from above</h2>
+        <figure>
+          <img
+            src="img/central-park.jpg"
+            width="700"
+            height="467"
+            loading="lazy"
+            alt="Aerial view looking south across Central Park in Manhattan">
+          <figcaption>
+            Chester Higgins Jr., May 1973.
+            <a href="https://commons.wikimedia.org/wiki/File:AERIAL_VIEW_LOOKING_SOUTH_ACROSS_CENTRAL_PARK_-_NARA_-_547707.jpg">U.S. National Archives</a>.
+          </figcaption>
+        </figure>
 
         <h2>Embeds</h2>
 
@@ -140,7 +139,7 @@
   </main>
 
   <footer class="site-footer">
-    <div class="container">&copy; Los Angeles Atlas</div>
+    <div class="container">&copy; Manhattan Atlas</div>
   </footer>
 </body>
 </html>

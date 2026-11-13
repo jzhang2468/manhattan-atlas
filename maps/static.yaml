@@ -6,7 +6,7 @@
 type: map
 id: locator
 config:
-  mapStyle: "https://tiles.openfreemap.org/styles/positron"
+  mapStyle: "style.json"
   center: [-73.9654, 40.7829]
   zoom: 11
   interactive: false

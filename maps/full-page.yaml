@@ -4,11 +4,11 @@
 # header, with zoom buttons, a legend and a layer panel.
 type: map
 id: full-page
-title: Los Angeles Metro Rail
+title: Manhattan and Central Park
 config:
   mapStyle: "style.json"
-  center: [-118.2437, 34.0522]
-  zoom: 10.5
+  center: [-73.9654, 40.7829]
+  zoom: 12.5
 
 # MapLibre's own buttons. `navigation` adds zoom in/out and a compass (click
 # it to turn the map back to north). Others: scale, fullscreen, geolocate.
@@ -41,39 +41,49 @@ layers:
       fill-color: "#b2182b"
       fill-opacity: 0.35
 
-  # LA Metro Rail GTFS snapshot, 2026-11-13.
-  - id: metro-rail-lines
+  - id: bike-lanes
     type: line
-    label: Metro Rail lines
-    visible: true
+    label: Bike lanes
     source:
       type: geojson
-      url: "data/la-metro-rail-lines.geojson"
+      url: "data/manhattan-bike-lanes.geojson"
     paint:
-      line-color: "#174f85"
-      line-width: 3
-    legend: { label: Metro Rail lines, color: "#174f85", shape: line }
+      line-color: "#2166ac"
+      line-width: 2
+    legend: { label: Bike lanes, color: "#2166ac", shape: line }
+    interactive:
+      hover:
+        cursor: pointer
+        popup:
+          - strong:
+              - property: street
 
-  - id: metro-rail-stations
+  - id: squirrels
     type: circle
-    label: Metro Rail stations
-    visible: true
+    label: Squirrels by fur colour
     source:
       type: geojson
-      url: "data/la-metro-rail-stations.geojson"
+      url: "data/squirrel20241021.geojson"
+    classify:
+      field: primary_fur_color
+      categories:
+        Gray: "#7a7a7a"
+        Cinnamon: "#c0642f"
+        Black: "#1f1f1f"
+      other: "#9cabb5"
     paint:
-      circle-color: "#b34825"
-      circle-radius: 4
-      circle-stroke-width: 1.5
+      circle-radius: ["interpolate", ["linear"], ["zoom"], 11, 1.5, 12.5, 2.25, 15, 4]
+      circle-stroke-width: 0.75
       circle-stroke-color: "#ffffff"
-    legend: { label: Metro Rail stations, color: "#b34825", shape: circle }
     interactive:
       hover:
         cursor: pointer
       click:
         popup:
           - h3:
-              - property: name
+              - str: "Squirrel "
+              - property: unique_squirrel_id
           - p:
-              - str: "Lines: "
-              - property: lines
+              - str: "Fur: "
+              - property: primary_fur_color
+                else: "not recorded"

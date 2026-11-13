@@ -10,7 +10,7 @@ id: squirrels
 config:
   # The basemap. Any MapLibre style URL works; OpenFreeMap needs no API key.
   # Other OpenFreeMap styles: liberty, bright, dark, fiord.
-  mapStyle: "https://tiles.openfreemap.org/styles/positron"
+  mapStyle: "style.json"
   center: [-73.9654, 40.7829] # [longitude, latitude]
   zoom: 13.5
 

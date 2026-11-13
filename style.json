@@ -1,16 +1,16 @@
 {
   "version": 8,
-  "name": "Los Angeles | Housing and Mobility",
+  "name": "Manhattan Atlas",
   "metadata": {
     "maputnik:renderer": "mlgljs",
     "maputnik:owner": "jzhang2468",
-    "project:title": "Who Can Afford to Live Near Transit?",
-    "project:purpose": "A quiet Los Angeles basemap for later housing and mobility overlays. No thematic housing or transit service data is included.",
+    "project:title": "Manhattan Atlas",
+    "project:purpose": "A basemap for the Manhattan bike-lane and Central Park squirrel-sighting maps.",
     "style:template": "Positron (OpenMapTiles), selected from the Maputnik gallery",
     "style:template-url": "https://github.com/openmaptiles/positron-gl-style",
     "style:tiles": "OpenFreeMap / OpenMapTiles / OpenStreetMap contributors",
-    "style:design": "Warm off-white land, muted blue water, pale sage parks, neutral streets and contextual rail geometry. Buildings and street labels appear at closer zoom levels.",
-    "style:initial-view": "Los Angeles; north-up; top-down; zoom 10.5",
+    "style:design": "Cool gray land, slate-blue water, muted teal parks, white streets, and slate labels.",
+    "style:initial-view": "Manhattan, centered on Central Park at zoom 12.5",
     "style:created": "2026-11-05"
   },
   "sources": {
@@ -25,7 +25,7 @@
       "id": "background",
       "type": "background",
       "paint": {
-        "background-color": "#f4f1eb"
+        "background-color": "#eef2f5"
       },
       "layout": {}
     },
@@ -42,25 +42,7 @@
       "layout": {
         "visibility": "visible"
       },
-      "paint": {"fill-color": "#e0e7da"}
-    },
-    {
-      "id": "water",
-      "type": "fill",
-      "source": "openmaptiles",
-      "source-layer": "water",
-      "filter": [
-        "all",
-        ["==", "$type", "Polygon"],
-        ["!=", "brunnel", "tunnel"]
-      ],
-      "layout": {
-        "visibility": "visible"
-      },
-      "paint": {
-        "fill-antialias": true,
-        "fill-color": "#c8dce1"
-      }
+      "paint": {"fill-color": "#c6ddd6"}
     },
     {
       "id": "landcover_ice_shelf",
@@ -118,7 +100,7 @@
         "visibility": "visible"
       },
       "paint": {
-        "fill-color": "#eae6df",
+        "fill-color": "#e5ebef",
         "fill-opacity": [
           "interpolate",
           ["linear"],
@@ -130,6 +112,16 @@
           16,
           0.25
         ]
+      }
+    },
+    {
+      "id": "landcover_park",
+      "type": "fill",
+      "source": "openmaptiles",
+      "source-layer": "landcover",
+      "filter": ["==", ["get", "subclass"], "park"],
+      "paint": {
+        "fill-color": "#c6ddd6"
       }
     },
     {
@@ -147,7 +139,7 @@
         "visibility": "visible"
       },
       "paint": {
-        "fill-color": "#dce4d5",
+        "fill-color": "#bdd6cd",
         "fill-opacity": [
           "interpolate",
           ["linear"],
@@ -159,6 +151,24 @@
           15,
           0.9
         ]
+      }
+    },
+    {
+      "id": "water",
+      "type": "fill",
+      "source": "openmaptiles",
+      "source-layer": "water",
+      "filter": [
+        "all",
+        ["==", "$type", "Polygon"],
+        ["!=", "brunnel", "tunnel"]
+      ],
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "fill-antialias": true,
+        "fill-color": "#abc7d8"
       }
     },
     {
@@ -175,7 +185,7 @@
         "visibility": "visible"
       },
       "paint": {
-        "line-color": "#b4cbd2",
+        "line-color": "#89adbf",
         "line-width": [
           "interpolate",
           ["linear"],
@@ -215,9 +225,9 @@
         "text-size": 12
       },
       "paint": {
-        "text-color": "#78959e",
+        "text-color": "#466677",
         "text-halo-blur": 0.5,
-        "text-halo-color": "#f4f1eb",
+        "text-halo-color": "#eef2f5",
         "text-halo-width": 1.2
       }
     },
@@ -229,8 +239,8 @@
       "minzoom": 14,
       "paint": {
         "fill-antialias": true,
-        "fill-color": "#dcd7cf",
-        "fill-outline-color": "#cec8bf",
+        "fill-color": "#d6dfe5",
+        "fill-outline-color": "#c0cdd6",
         "fill-opacity": [
           "interpolate",
           ["linear"],
@@ -269,7 +279,7 @@
         "visibility": "visible"
       },
       "paint": {
-        "line-color": "#d3cec6",
+        "line-color": "#bfcbd3",
         "line-opacity": 1,
         "line-width": {
           "base": 1.4,
@@ -305,7 +315,7 @@
         "visibility": "visible"
       },
       "paint": {
-        "line-color": "#fffdfa",
+        "line-color": "#f9fbfd",
         "line-width": {
           "base": 1.4,
           "stops": [
@@ -335,7 +345,7 @@
         "visibility": "visible"
       },
       "paint": {
-        "line-color": "#e3dfd8",
+        "line-color": "#d8e1e7",
         "line-opacity": 1,
         "line-width": {
           "base": 1.55,
@@ -362,7 +372,7 @@
         "visibility": "visible"
       },
       "paint": {
-        "line-color": "#e3dfd8",
+        "line-color": "#d8e1e7",
         "line-opacity": 1,
         "line-width": {
           "base": 1.5,
@@ -393,7 +403,7 @@
         "visibility": "visible"
       },
       "paint": {
-        "fill-color": "#efede7",
+        "fill-color": "#e8eef2",
         "fill-opacity": {
           "base": 1,
           "stops": [[13, 0], [14, 1]]
@@ -420,7 +430,7 @@
         "visibility": "visible"
       },
       "paint": {
-        "line-color": "#e3dfd8",
+        "line-color": "#d8e1e7",
         "line-opacity": 1,
         "line-width": {
           "base": 1.5,
@@ -444,7 +454,7 @@
       },
       "paint": {
         "fill-antialias": true,
-        "fill-color": "#f4f1eb"
+        "fill-color": "#eef2f5"
       }
     },
     {
@@ -463,7 +473,7 @@
         "line-join": "round"
       },
       "paint": {
-        "line-color": "#f4f1eb",
+        "line-color": "#eef2f5",
         "line-width": {
           "base": 1.2,
           "stops": [[15, 1], [17, 4]]
@@ -489,7 +499,7 @@
         "visibility": "visible"
       },
       "paint": {
-        "line-color": "#d6d4cd",
+        "line-color": "#c0ccd4",
         "line-opacity": 0.65,
         "line-width": {
           "base": 1.2,
@@ -567,7 +577,7 @@
         "visibility": "visible"
       },
       "paint": {
-        "line-color": "#d3cec6",
+        "line-color": "#bfcbd3",
         "line-dasharray": [12, 0],
         "line-width": {
           "base": 1.3,
@@ -602,7 +612,7 @@
         "visibility": "visible"
       },
       "paint": {
-        "line-color": "#fffdfa",
+        "line-color": "#f9fbfd",
         "line-width": {
           "base": 1.3,
           "stops": [[10, 2], [20, 20]]
@@ -636,7 +646,7 @@
         "visibility": "visible"
       },
       "paint": {
-        "line-color": "#d8d2c8",
+        "line-color": "#c4d0d8",
         "line-width": 2,
         "line-opacity": 0.8
       }
@@ -670,7 +680,7 @@
         "visibility": "visible"
       },
       "paint": {
-        "line-color": "#d3cec6",
+        "line-color": "#bfcbd3",
         "line-dasharray": [2, 0],
         "line-opacity": 1,
         "line-width": {
@@ -712,7 +722,7 @@
         "visibility": "visible"
       },
       "paint": {
-        "line-color": "#fffdfa",
+        "line-color": "#f9fbfd",
         "line-width": {
           "base": 1.4,
           "stops": [
@@ -743,7 +753,7 @@
         "visibility": "visible"
       },
       "paint": {
-        "line-color": "#d8d2c8",
+        "line-color": "#c4d0d8",
         "line-width": {
           "base": 1.4,
           "stops": [[4, 2], [6, 1.3]]
@@ -774,7 +784,7 @@
         "visibility": "visible"
       },
       "paint": {
-        "line-color": "#b7bdbb",
+        "line-color": "#a8bbc5",
         "line-width": 3,
         "line-opacity": 0.75
       }
@@ -802,7 +812,7 @@
         "visibility": "visible"
       },
       "paint": {
-        "line-color": "#f4f1eb",
+        "line-color": "#eef2f5",
         "line-dasharray": [3, 3],
         "line-width": 2,
         "line-opacity": 0.75
@@ -831,7 +841,7 @@
         "visibility": "visible"
       },
       "paint": {
-        "line-color": "#b7bdbb",
+        "line-color": "#a8bbc5",
         "line-width": 3,
         "line-opacity": 0.75
       }
@@ -856,7 +866,7 @@
         "visibility": "visible"
       },
       "paint": {
-        "line-color": "#f4f1eb",
+        "line-color": "#eef2f5",
         "line-dasharray": [3, 3],
         "line-width": 2,
         "line-opacity": 0.75
@@ -885,7 +895,7 @@
         "visibility": "visible"
       },
       "paint": {
-        "line-color": "#b7bdbb",
+        "line-color": "#a8bbc5",
         "line-width": {
           "base": 1.3,
           "stops": [[16, 3], [20, 7]]
@@ -916,7 +926,7 @@
         "visibility": "visible"
       },
       "paint": {
-        "line-color": "#f4f1eb",
+        "line-color": "#eef2f5",
         "line-dasharray": [3, 3],
         "line-width": {
           "base": 1.3,
@@ -949,7 +959,7 @@
         "visibility": "visible"
       },
       "paint": {
-        "line-color": "#d3cec6",
+        "line-color": "#bfcbd3",
         "line-dasharray": [2, 0],
         "line-opacity": 1,
         "line-width": {
@@ -986,7 +996,7 @@
         "visibility": "visible"
       },
       "paint": {
-        "line-color": "#fffdfa",
+        "line-color": "#f9fbfd",
         "line-width": {
           "base": 1.4,
           "stops": [
@@ -1038,9 +1048,9 @@
         "visibility": "visible"
       },
       "paint": {
-        "text-color": "#7e827e",
+        "text-color": "#536672",
         "text-halo-blur": 0.5,
-        "text-halo-color": "#f4f1eb",
+        "text-halo-color": "#eef2f5",
         "text-halo-width": 1.2,
         "text-translate": [0, 0]
       },
@@ -1072,9 +1082,9 @@
         "visibility": "visible"
       },
       "paint": {
-        "text-color": "#7e827e",
+        "text-color": "#536672",
         "text-halo-blur": 0.5,
-        "text-halo-color": "#f4f1eb",
+        "text-halo-color": "#eef2f5",
         "text-halo-width": 1.2,
         "text-translate": [0, 2]
       },
@@ -1100,7 +1110,7 @@
       },
       "paint": {
         "line-blur": 0.4,
-        "line-color": "#c3beb6",
+        "line-color": "#a9bbc6",
         "line-dasharray": [2, 2],
         "line-opacity": 0.7,
         "line-width": {
@@ -1132,7 +1142,7 @@
           "base": 1,
           "stops": [[0, 0.4], [22, 4]]
         },
-        "line-color": "#c3beb6",
+        "line-color": "#a9bbc6",
         "line-opacity": 0.7,
         "line-width": {
           "base": 1.1,
@@ -1163,7 +1173,7 @@
           "base": 1,
           "stops": [[0, 0.4], [22, 4]]
         },
-        "line-color": "#c3beb6",
+        "line-color": "#a9bbc6",
         "line-opacity": 0.7,
         "line-width": {
           "base": 1.1,
@@ -1210,9 +1220,9 @@
         "visibility": "visible"
       },
       "paint": {
-        "text-color": "#64716e",
+        "text-color": "#455b6a",
         "text-halo-blur": 0.5,
-        "text-halo-color": "#f4f1eb",
+        "text-halo-color": "#eef2f5",
         "text-halo-width": 1.2
       },
       "minzoom": 13
@@ -1258,9 +1268,9 @@
         "text-letter-spacing": 0.04
       },
       "paint": {
-        "text-color": "#64716e",
+        "text-color": "#455b6a",
         "text-halo-blur": 0.5,
-        "text-halo-color": "#f4f1eb",
+        "text-halo-color": "#eef2f5",
         "text-halo-width": 1.2
       },
       "minzoom": 11
@@ -1297,9 +1307,9 @@
         "visibility": "visible"
       },
       "paint": {
-        "text-color": "#64716e",
+        "text-color": "#455b6a",
         "text-halo-blur": 0.5,
-        "text-halo-color": "#f4f1eb",
+        "text-halo-color": "#eef2f5",
         "text-halo-width": 1.2
       }
     },
@@ -1335,9 +1345,9 @@
         "visibility": "visible"
       },
       "paint": {
-        "text-color": "#64716e",
+        "text-color": "#455b6a",
         "text-halo-blur": 0.5,
-        "text-halo-color": "#f4f1eb",
+        "text-halo-color": "#eef2f5",
         "text-halo-width": 1.2
       }
     },
@@ -1388,9 +1398,9 @@
         "visibility": "visible"
       },
       "paint": {
-        "text-color": "#4f5c59",
+        "text-color": "#354d5f",
         "text-halo-blur": 0.5,
-        "text-halo-color": "#f4f1eb",
+        "text-halo-color": "#eef2f5",
         "text-halo-width": 1.2
       }
     },
@@ -1440,9 +1450,9 @@
         "visibility": "visible"
       },
       "paint": {
-        "text-color": "#4f5c59",
+        "text-color": "#354d5f",
         "text-halo-blur": 0.5,
-        "text-halo-color": "#f4f1eb",
+        "text-halo-color": "#eef2f5",
         "text-halo-width": 1.2
       }
     },
@@ -1493,9 +1503,9 @@
         "visibility": "visible"
       },
       "paint": {
-        "text-color": "#4f5c59",
+        "text-color": "#354d5f",
         "text-halo-blur": 0.5,
-        "text-halo-color": "#f4f1eb",
+        "text-halo-color": "#eef2f5",
         "text-halo-width": 1.2
       }
     },
@@ -1531,9 +1541,9 @@
         "text-offset": [0, 0]
       },
       "paint": {
-        "text-color": "#64716e",
+        "text-color": "#455b6a",
         "text-halo-blur": 0.5,
-        "text-halo-color": "#f4f1eb",
+        "text-halo-color": "#eef2f5",
         "text-halo-width": 1.2
       }
     },
@@ -1573,8 +1583,8 @@
         "text-offset": [0, 0]
       },
       "paint": {
-        "text-color": "#64716e",
-        "text-halo-color": "#f4f1eb",
+        "text-color": "#455b6a",
+        "text-halo-color": "#eef2f5",
         "text-halo-width": 1.2,
         "text-halo-blur": 0.5
       }
@@ -1616,8 +1626,8 @@
         "text-offset": [0, 0]
       },
       "paint": {
-        "text-color": "#64716e",
-        "text-halo-color": "#f4f1eb",
+        "text-color": "#455b6a",
+        "text-halo-color": "#eef2f5",
         "text-halo-width": 1.2,
         "text-halo-blur": 0.5
       }
@@ -1663,16 +1673,16 @@
         "text-offset": [0, 0]
       },
       "paint": {
-        "text-color": "#64716e",
-        "text-halo-color": "#f4f1eb",
+        "text-color": "#455b6a",
+        "text-halo-color": "#eef2f5",
         "text-halo-width": 1.2,
         "text-halo-blur": 0.5
       }
     }
   ],
-  "id": "positron",
-  "center": [-118.2437, 34.0522],
-  "zoom": 10.5,
+  "id": "manhattan-atlas",
+  "center": [-73.9654, 40.7829],
+  "zoom": 12.5,
   "bearing": 0,
   "pitch": 0
 }

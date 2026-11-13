@@ -11,7 +11,7 @@ markerColor: "#000000"  # color of the chapter markers
 
 # The map when the page opens.
 config:
-  mapStyle: "https://tiles.openfreemap.org/styles/positron"
+  mapStyle: "style.json"
   center: [-74.0060, 40.7128]
   zoom: 10
   interactive: false   # scrolling moves the story, not the map
@@ -93,15 +93,15 @@ chapters:
       show: [central-park]
       hide: [squirrels]
 
-  - id: mississippi
-    title: Pictures in a chapter
+  - id: central-park-photo
+    title: Aerial view looking south across Central Park in Manhattan
     description: >-
       <p>A chapter can show an image above its text with <code>image:</code>,
-      a file in <code>img/</code>. This is Harold Fisk's 1944 map of the
-      Mississippi's ancient courses, near where the map has flown to.</p>
-    image: "img/fisk02.jpg"
-    center: [-89.53, 36.59]
-    zoom: 9
+      a file in <code>img/</code>. Chester Higgins Jr. took this photo in May 1973.
+      <a href="https://commons.wikimedia.org/wiki/File:AERIAL_VIEW_LOOKING_SOUTH_ACROSS_CENTRAL_PARK_-_NARA_-_547707.jpg">U.S. National Archives</a>.</p>
+    image: "img/central-park.jpg"
+    center: [-73.9675, 40.7832]
+    zoom: 13
     pitch: 30
     bearing: -10
     alignment: left
@@ -109,7 +109,7 @@ chapters:
       hide: [central-park]
 
   - id: outro
-    title: Back to New York
+    title: A wider view of Manhattan
     description: >-
       <p><code>rotateAnimation: true</code> turns the camera slowly while this
       chapter is on screen. Edit <code>stories/nyc.yaml</code> to write
