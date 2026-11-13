@@ -5,7 +5,7 @@
   <!-- Without this line, phones lay the page out at desktop width and the map looks tiny. -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Full page map | Los Angeles Atlas</title>
-  <meta name="description" content="Los Angeles Atlas, an interactive mapping exercise.">
+  <meta name="description" content="Explore Los Angeles Metro Rail lines and stations on an interactive map.">
 
   <!-- MapLibre's stylesheet. Keep it on the same major version (6) as the import map below. -->
   <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@6/dist/maplibre-gl.css">
@@ -39,9 +39,9 @@
     <ml-map src="maps/full-page.yaml" class="full-page-map">
       <!-- A child with slot="top-left" (or top-right, bottom-left, bottom-right) sits in that corner of the map. -->
       <div slot="top-left" class="map-note">
-        <strong>Central Park</strong><br>
-        Squirrel sightings and Manhattan's bike lanes. Use the layer panel to
-        switch layers on and off.
+        <strong>Los Angeles Metro Rail</strong><br>
+        Select a station to see which lines serve it.<br>
+        <a href="https://developer.metro.net/gtfs-schedule-data/">LA Metro GTFS</a> · Nov 13, 2026
       </div>
     </ml-map>
   </main>
